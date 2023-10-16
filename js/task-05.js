@@ -32,10 +32,15 @@ function destroyBoxes() {
   boxesContainer.innerHTML = '';
 }
 
-createButton.addEventListener('click', () => {
+function handleCreateButtonClick() {
   const amount = Number(document.querySelector('input').value);
   const newBoxes = createBoxes(amount);
   renderBoxes(newBoxes);
-});
+}
 
-destroyButton.addEventListener('click', destroyBoxes);
+function handleDestroyButtonClick() {
+  destroyBoxes();
+}
+
+createButton.addEventListener('click', handleCreateButtonClick);
+destroyButton.addEventListener('click', handleDestroyButtonClick);
